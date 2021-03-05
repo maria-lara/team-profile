@@ -1,0 +1,20 @@
+.jumbotron {
+    background-color: white;
+    margin-left: 50px;
+}
+
+.container {
+    background-color: #26648E;
+    font-family: helvetica;
+}
+.manager-card {
+    background-color: #4F8FC0;
+}
+
+.engineer-card {
+    background-color: #53D2DC
+}
+
+.intern-card {
+    background-color: #FFE3B3;
+} 
