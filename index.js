@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
 
-const Employee = require ('./li/employee');
+const Employee = require ('./lib/employee');
 const Engineer = require('./lib/engineer');
 const Intern = require('./lib/intern');
 const Manager = require('./lib/manager');
@@ -51,13 +51,6 @@ const userPrompts = () =>{
                          default: false
                     }])
 
-                    .then(({github, anotherInput}) => {
-                         engineer.push(new Engineer(employee, id, email, github))
-                         if (anotherInput) {
-                              return Prompt();
-                         }
-                    })
-
           } else if (role === 'Intern') {
                return inquirer
 
@@ -72,14 +65,6 @@ const userPrompts = () =>{
                          message: "What you like to add another employee?",
                          default: false
                     }])
-
-                    .then(({school, anotherInput}) => {
-                         intern.push(new Intern(employee, id, email, school))
-
-                         if (anotherInput) {
-                              return Prompt();
-                         }
-                         })
           } else if (role === "Manager") {
                return inquirer
 
@@ -94,13 +79,6 @@ const userPrompts = () =>{
                          message: "What you like to add another employee?",
                          default: false
                     }])
-
-                    .then(({officeNumber, anotherInput}) => {
-                         manager.push(new Manager(employee, id, email, officeNumber))
-                         if (anotherInput) {
-                              return Prompt();
-                         }
-                    })
           }
      }).then((answers) => {
           employeeProfiles.push(answers);
@@ -115,7 +93,7 @@ const userPrompts = () =>{
               };
               for (let i = 0; i < employeeProfiles.length; i++) {
                   let employees = cardsHTML(employeeProfiles[i]);
-                  switch (employeeList[i].role) {
+                  switch (employeeProfiles[i].role) {
                     case 'Engineer':
                          answerInputs.engineerCards += employees;
                          break;

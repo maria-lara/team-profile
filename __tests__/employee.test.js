@@ -1,28 +1,28 @@
 // Create variable //
-const Employee = require('../lib/Employee');
+const Employee = require('../lib/employee');
 
 // Begin with employee object //
 test('Create employee object', () => {
   const emp = new Employee();
-  expect(typeof(emp)).toBe('object');
+  expect(typeof(emp)).toEqual('object');
 });
     // Name //
 test('Create employee name', () => {
   const name = 'Lara Croft';
   const emp = new Employee(name);
-  expect(emp.name).toBe(name);
+  expect(emp.name).toEqual(name);
 });
     // ID //
 test('Create employee ID', () => {
-  const testValue = A1C24;
+  const testValue = 'A1C24';
   const emp = new Employee('Lara Croft', testValue);
-  expect(emp.id).toBe(testValue);
+  expect(emp.id).toEqual(testValue);
 });
     // Email //
 test('Create employee email address', () => {
   const testValue = 'lc@gmail.com';
-  const emp = new Employee('Lara Croft', A1C24, testValue);
-  expect(emp.email).toBe(testValue);
+  const emp = new Employee('Lara Croft', 'A1C24', testValue);
+  expect(emp.email).toEqual(testValue);
 });
 
 // Get information //
@@ -34,20 +34,20 @@ test('Gets employee name', () => {
 });
   // ID //
 test('Gets employee ID', () => {
-  const testValue = A1C24;
+  const testValue = 'A1C24';
   const emp = new Employee('Lara Croft', testValue);
   expect(emp.getId()).toEqual(testValue);
 });
   // Email //
 test('Gets employee email address', () => {
   const testValue = 'lc@gmail.com';
-  const emp = new Employee('Lara Croft', A1C24, testValue);
+  const emp = new Employee('Lara Croft', 'A1C24', testValue);
   expect(emp.getEmail()).toEqual(testValue);
 });
 
 // Get role to equal the values ^ //
 test('Gets employee role', () => {
   const testValue = 'Employee';
-  const emp = new Employee('Lara Croft', A1C24, 'lc@gmail.com');
+  const emp = new Employee('Lara Croft', 'A1C24', 'lc@gmail.com');
   expect(emp.getRole()).toEqual(testValue);
 });
