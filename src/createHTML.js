@@ -19,32 +19,29 @@ const createHTML = (answers) => {
     </head>
     
     <body>
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container-top">
-          <h2 class="display-4">Meet the Team</h2>
-          <p class="lead">Our hardworking team works together to meet our mission while embracing our company values.</p>
-        </div>
-      </div>
-    
-        <div class='container'>
-        <div class="col-4">
-            <div class='row m-3'>
-                ${answers.managerCards}
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container-top">
+            <h2 class="display-4">Meet the Team</h2>
+            <p class="lead">Our hardworking team works together to meet our mission while embracing our company values.</p>
             </div>
         </div>
-        <div class="col-4">
-            <div class='row m-3'>
-                ${answers.engineerCards}
+        <div class="container-fluid">
+                <div class="row m-3">
+                    ${answers.managerCards}
+                </div>
             </div>
-        </div>
-        <div class="col-4">
-            <div class='row m-3'>
-                ${answers.internCards}
+                <div class="row m-3">
+                    ${answers.engineerCards}
+                </div>
             </div>
-        </div>
+                <div class="row m-3">
+                    ${answers.internCards}
+                </div>
+            </div>
         </div>
         <script src="https://kit.fontawesome.com/257de25400.js" crossorigin="anonymous"></script>       
     </body>
+    
     </html>`
 }
 

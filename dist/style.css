@@ -6,18 +6,10 @@
 .container {
     background-color: #26648E;
     font-family: helvetica;
-}
-.manager-card {
-    background-color: #4F8FC0;
-}
-
-.engineer-card {
-    background-color: #53D2DC
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.intern-card {
-    background-color: #FFE3B3;
-} 
 
 .container-body {
     display: flex;
@@ -27,7 +19,7 @@
     background-color:rgb(255, 255, 255);
     margin-top: 4%;
     border: solid black;
-    font-size: x-large;
+    font-size: large;
 }
 .card-header{
     margin: 10%;
