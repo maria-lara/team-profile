@@ -13,7 +13,7 @@ const createHTML = (answers) => {
             integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
             crossorigin="anonymous"></script>
     
-        <link rel="stylesheet" href="./assets/style.css" />
+        <link rel="stylesheet" href="./assets/style.css">
     
         <title>Meet the Team</title>
     </head>
