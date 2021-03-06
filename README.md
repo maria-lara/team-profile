@@ -11,15 +11,6 @@ Check out the materials here:
 * [Check out a sample HTML file](https://maria-lara.github.io/team-profile/dist/index.html)
 * [Video Demonstration](https://www.youtube.com/watch?v=vy2x4KYtdus&feature=youtu.be)
 
-## Table of Contents
-[Description](https://github.com/maria-lara/team-profile/edit/main/README.md#description)
-[Installation](https://github.com/maria-lara/team-profile/edit/main/README.md#installation)
-[Usage](https://github.com/maria-lara/team-profile/edit/main/README.md#usage)
-[Contributors](https://github.com/maria-lara/team-profile/edit/main/README.md#contributors)
-[Tests](https://github.com/maria-lara/team-profile/edit/main/README.md#tests)
-[Sample](https://github.com/maria-lara/team-profile/edit/main/README.md#sample)
-[Questions](https://github.com/maria-lara/team-profile/edit/main/README.md#questions)
-
 ## Installation
 To begin installation, you must clone the repository to your local machine. After cloning, you can open the directory using your local command line (Terminal or Git Bash). 
 
