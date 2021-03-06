@@ -2,7 +2,7 @@ const createCards = (answers) => {
     
     if (answers.role === 'Manager') {
         return `
-        <div class="card manager" style="width: 20rem;">
+        <div class="card">
             <div class="card-header">
                 <h2 class="card-title">${answers.employee}</h2>
                 <h2><i class="far fa-user"></i>${answers.role}</h2>
@@ -18,7 +18,7 @@ const createCards = (answers) => {
         `
     } else if (answers.role === 'Engineer') {
         return `
-        <div class="card engineer"  style="width: 20rem;">
+        <div class="card">
             <div class="card-header">
                 <h2 class="card-title">${answers.employee}</h2>
                 <h2><i class="far fa-user"></i>${answers.role}</h2>
@@ -35,7 +35,7 @@ const createCards = (answers) => {
         `
     } else if (answers.role === 'Intern') {
         return `
-        <div class="card intern"  style="width: 20rem;">
+        <div class="card">
             <div class="card-header">
                 <h2 class="card-title">${answers.employee}</h2>
                 <h2><i class="far fa-user"></i>${answers.role}</h2>

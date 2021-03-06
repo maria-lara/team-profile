@@ -10,16 +10,15 @@
     justify-content: space-evenly;
 }
 
-
-.container-body {
-    display: flex;
-    justify-content: space-evenly;
-}
 .card {
     background-color:rgb(255, 255, 255);
     margin-top: 4%;
     border: solid black;
     font-size: large;
+    position: relative;
+    display: flex;
+
+
 }
 .card-header{
     margin: 10%;
