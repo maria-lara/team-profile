@@ -34,65 +34,48 @@ const userPrompts = () =>{
           type: 'text',
           name: 'email',
           message: "Please enter the employee's email address:"
+          },
+          {
+          type: 'text',
+          name: 'github',
+          message: "Please enter the GitHub username:",
+          when: function (answers) {
+               return answers.role === 'Engineer';
+          }},
+          { 
+          type:'text',
+          name:'school',
+          message: "Please enter the Intern's school:",
+          when: function (answers) {
+               return answers.role === 'Intern';
+          }},
+          {
+          type:'text',
+          name: 'office',
+          message:"Please enter the manager's office number:",
+          when: function (answers) {
+               return answers.role === 'Manager';
+          }},
+          {
+          type: 'input',
+          name: 'anotherInput',
+          message: "Would you like to add anyone else?",
           }])
-          .then(({employee, id, email, role}) => {
-          if (role === "Engineer") {
-               return inquirer
 
-                    .prompt([{
-                         type: 'text',
-                         name: 'github',
-                         message: "What is the Engineer's Github username?"
-                    },
-                    {
-                         type:'confirm',
-                         name:'anotherEntry',
-                         message: "What you like to add another employee?",
-                         default: false
-                    }])
-
-          } else if (role === 'Intern') {
-               return inquirer
-
-                    .prompt([{
-                         type:'text',
-                         name:'school',
-                         message: "What is the Intern's school?"
-                    },
-                    {
-                         type:'confirm',
-                         name:'anotherEntry',
-                         message: "What you like to add another employee?",
-                         default: false
-                    }])
-          } else if (role === "Manager") {
-               return inquirer
-
-                    .prompt([{
-                         type:'text',
-                         name: 'office',
-                         message:"Please enter the manager's office number:"
-                    },
-                    {
-                         type:'confirm',
-                         name:'anotherInput',
-                         message: "What you like to add another employee?",
-                         default: false
-                    }])
-          }
-     }).then((answers) => {
+          .then((answers) => {
           employeeProfiles.push(answers);
   
-          if (answers.confirm === 'yes') {
-              userPrompt();
+          if (answers.anotherInput === 'yes') {
+              userPrompts();
           } else {
-              let answerInputs = {
+              var answerInputs = {
                   engineerCards: '',
                   internCards: '',
                   managerCards: '',
               };
-              for (let i = 0; i < employeeProfiles.length; i++) {
-                  let employees = cardsHTML(employeeProfiles[i]);
+              for (var i = 0; i < employeeProfiles.length; i++) {
+                  var employees = cardsHTML(employeeProfiles[i]);
+
                   switch (employeeProfiles[i].role) {
                     case 'Engineer':
                          answerInputs.engineerCards += employees;
@@ -111,14 +94,14 @@ const userPrompts = () =>{
   
               init(answerInputs);
           }
-      })
-};
+     })
+     };
 
 const writeHTML = util.promisify(fs.writeFile);
 
 const init = (answers) => {
     writeHTML(`${__dirname}/dist/index.html`, createHTML(answers))
-        .then(() => console.log('Successfully created an index.html file.'))
+        .then(() => console.log('You have created an index.html file. Please check the dist folder.'))
         .catch((err) => console.log(err));
 }
 
